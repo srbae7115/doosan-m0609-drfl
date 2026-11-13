@@ -596,11 +596,11 @@ private:
         g->addWidget(linAcc_, 8, 1);
         g->addWidget(new QLabel("회전 [°/s²]"), 8, 2);
         g->addWidget(linRotAcc_, 8, 3);
-        // Desk measured 2026-11-13 (~/doosan_ros2_ws/table_points.json): desk top <= 11 mm in the work area,
+        // Lab desk (all desks identical, fixed values in doosan-m0609-ros2 scripts/pp_scene.yaml): desk top <= 11 mm,
         // closed fingertip 140 mm below the flange -> 155 keeps the fingertip >= ~4 mm above the desk.
         linZMin_ = makeSpin(-500, 1000, 155, 0, 5);
         linZMin_->setToolTip("플랜지 Z가 이 값보다 낮아지는 이동은 거부 (MoveL, 직교 조그, 접근점 이동, Pick & Place).\n"
-                             "기본 155 = 책상 윗면(측정 최대 11 mm) + 손가락 끝 140 mm + 여유 4 mm.\n"
+                             "기본 155 = 실습실 공통 책상 윗면(최대 11 mm, 고정값) + 손가락 끝 140 mm + 여유 4 mm.\n"
                              "하한보다 아래에 있을 때는 위로 올리는 이동만 허용");
         g->addWidget(new QLabel("Z 하한 [mm]"), 9, 0);
         g->addWidget(linZMin_, 9, 1);
