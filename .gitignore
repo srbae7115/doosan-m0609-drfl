@@ -1,0 +1,6 @@
+third_party/
+build/
+*.o
+tests/connect_test
+tests/flange_io_status
+tests/egp_gripper_test
